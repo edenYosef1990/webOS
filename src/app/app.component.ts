@@ -1,13 +1,11 @@
 import { Component } from "@angular/core";
-import { RouterOutlet } from "@angular/router";
+import { DesktopComponent } from "./desktop/desktop.component";
 
 @Component({
   selector: "app-root",
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [DesktopComponent],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.css",
 })
-export class AppComponent {
-  title = "webOS";
-  //try to change
-}
+export class AppComponent {}

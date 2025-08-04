@@ -1,0 +1,12 @@
+<div class="terminal-window">
+  <div class="terminal-header">
+    <button class="close" (click)="closed.emit()">x</button>
+  </div>
+  <div class="terminal-body" (click)="focusInput()">
+    <div class="line" *ngFor="let line of lines">{{line}}</div>
+    <div class="input-line">
+      <span class="prompt">$</span>
+      <input #input [(ngModel)]="current" (keydown.enter)="handleEnter()" />
+    </div>
+  </div>
+</div>
