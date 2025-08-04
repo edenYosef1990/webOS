@@ -1,7 +1,17 @@
 <div class="desktop" (contextmenu)="$event.preventDefault()">
-  <div class="icon" (dblclick)="openTerminal()">
-    <img src="terminal-icon.svg" alt="Terminal icon" />
-    <div class="label">Terminal</div>
+  <div class="sidebar">
+    <div class="icon">
+      <img src="recycle-bin-icon.svg" alt="Recycle Bin icon" />
+      <div class="label">Recycle Bin</div>
+    </div>
+    <div class="icon">
+      <img src="file-explorer-icon.svg" alt="File Explorer icon" />
+      <div class="label">File Explorer</div>
+    </div>
+    <div class="icon" (dblclick)="openTerminal()">
+      <img src="terminal-icon.svg" alt="Terminal icon" />
+      <div class="label">Terminal</div>
+    </div>
   </div>
   <app-terminal *ngIf="terminalOpen" (closed)="closeTerminal()" />
 </div>
