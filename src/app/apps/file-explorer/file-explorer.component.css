@@ -52,6 +52,11 @@
   background: #f0f0f0;
 }
 
+.file-item.selected {
+  background: #cde5ff;
+  border: 1px solid #4a90e2;
+}
+
 .file-item img {
   width: 48px;
   height: 48px;
