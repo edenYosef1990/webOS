@@ -5,8 +5,11 @@
   </div>
   <div class="explorer-body">
     <div class="file-item" *ngFor="let file of files">
-      <img [src]="getIcon(file)" [alt]="file.type + ' file icon'" />
-      <div class="name">{{file.name}}</div>
+      <img
+        [src]="getIcon(file)"
+        [alt]="file.type + ' file icon'"
+      />
+      <div class="file-name">{{ file.name }}</div>
     </div>
   </div>
 </div>

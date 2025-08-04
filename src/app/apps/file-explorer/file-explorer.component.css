@@ -41,15 +41,25 @@
   width: 80px;
   margin: 8px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.file-item:hover {
+  background: #f0f0f0;
 }
 
 .file-item img {
   width: 48px;
   height: 48px;
-  display: block;
-  margin: 0 auto 4px;
+  margin-bottom: 4px;
 }
 
-.name {
+.file-name {
   font-size: 12px;
+  margin-top: 4px;
+  color: #000;
 }
