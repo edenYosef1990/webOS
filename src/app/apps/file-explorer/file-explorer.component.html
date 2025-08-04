@@ -1,0 +1,12 @@
+<div class="explorer-window">
+  <div class="explorer-header">
+    <button class="close" (click)="closed.emit()">x</button>
+    <span class="title">Files</span>
+  </div>
+  <div class="explorer-body">
+    <div class="file-item" *ngFor="let file of files">
+      <img [src]="getIcon(file)" [alt]="file.type + ' file icon'" />
+      <div class="name">{{file.name}}</div>
+    </div>
+  </div>
+</div>

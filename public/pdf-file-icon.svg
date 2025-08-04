@@ -1,0 +1,5 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <rect x="8" y="2" width="48" height="60" fill="#fff" stroke="#d00"/>
+  <rect x="8" y="34" width="48" height="28" fill="#d00"/>
+  <text x="20" y="54" font-size="20" fill="#fff" font-family="Arial">PDF</text>
+</svg>
