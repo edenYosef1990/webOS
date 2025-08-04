@@ -1,6 +1,7 @@
 <div class="desktop" (contextmenu)="$event.preventDefault()">
   <div class="icon" (dblclick)="openTerminal()">
-    Terminal
+    <img src="terminal-icon.svg" alt="Terminal icon" />
+    <div class="label">Terminal</div>
   </div>
   <app-terminal *ngIf="terminalOpen" (closed)="closeTerminal()" />
 </div>
