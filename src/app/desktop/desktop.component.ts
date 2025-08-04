@@ -13,6 +13,7 @@ import { FileExplorerComponent } from '../apps/file-explorer/file-explorer.compo
 export class DesktopComponent {
   terminalOpen = false;
   fileExplorerOpen = false;
+  selectedIcon: string | null = null;
 
   openTerminal() {
     this.terminalOpen = true;
@@ -28,6 +29,14 @@ export class DesktopComponent {
 
   closeFileExplorer() {
     this.fileExplorerOpen = false;
+  }
+
+  selectIcon(icon: string) {
+    this.selectedIcon = icon;
+  }
+
+  clearSelection() {
+    this.selectedIcon = null;
   }
 
   @HostListener('document:keydown.control.alt.t', ['$event'])
