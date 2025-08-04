@@ -48,3 +48,9 @@ app-terminal {
   top: 5rem;
   left: 5rem;
 }
+
+app-file-explorer {
+  position: absolute;
+  top: 5rem;
+  left: 15rem;
+}

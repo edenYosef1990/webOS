@@ -4,7 +4,7 @@
       <img src="recycle-bin-icon.svg" alt="Recycle Bin icon" />
       <div class="label">Recycle Bin</div>
     </div>
-    <div class="icon">
+    <div class="icon" (dblclick)="openFileExplorer()">
       <img src="file-explorer-icon.svg" alt="File Explorer icon" />
       <div class="label">File Explorer</div>
     </div>
@@ -14,4 +14,5 @@
     </div>
   </div>
   <app-terminal *ngIf="terminalOpen" (closed)="closeTerminal()" />
+  <app-file-explorer *ngIf="fileExplorerOpen" (closed)="closeFileExplorer()" />
 </div>
