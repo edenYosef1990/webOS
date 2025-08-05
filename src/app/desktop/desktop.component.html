@@ -2,55 +2,30 @@
   <div class="sidebar">
     <div
       class="icon"
-      [class.selected]="selectedIcon === 'recycle'"
-      (click)="selectIcon('recycle'); $event.stopPropagation()"
+      *ngFor="let app of apps"
+      [class.selected]="selectedIcon === app.id"
+      (click)="selectIcon(app.id); $event.stopPropagation()"
+      (dblclick)="openApp(app.id)"
     >
-      <img src="recycle-bin-icon.svg" alt="Recycle Bin icon" />
-      <div class="label">Recycle Bin</div>
-    </div>
-    <div
-      class="icon"
-      [class.selected]="selectedIcon === 'explorer'"
-      (click)="selectIcon('explorer'); $event.stopPropagation()"
-      (dblclick)="openFileExplorer()"
-    >
-      <img src="file-explorer-icon.svg" alt="File Explorer icon" />
-      <div class="label">File Explorer</div>
-    </div>
-    <div
-      class="icon"
-      [class.selected]="selectedIcon === 'terminal'"
-      (click)="selectIcon('terminal'); $event.stopPropagation()"
-      (dblclick)="openTerminal()"
-    >
-      <img src="terminal-icon.svg" alt="Terminal icon" />
-      <div class="label">Terminal</div>
-    </div>
-    <div
-      class="icon"
-      [class.selected]="selectedIcon === 'text-editor'"
-      (click)="selectIcon('text-editor'); $event.stopPropagation()"
-      (dblclick)="openTextEditor()"
-    >
-      <img src="text-editor-icon.svg" alt="Text Editor icon" />
-      <div class="label">Text Editor</div>
+      <img [src]="app.icon" [alt]="app.label + ' icon'" />
+      <div class="label">{{ app.label }}</div>
     </div>
   </div>
   <app-terminal
-    *ngIf="terminalOpen"
-    (closed)="closeTerminal()"
+    *ngIf="isAppOpen('terminal')"
+    (closed)="closeApp('terminal')"
     appDraggable
     appDraggableHandle=".terminal-header"
   />
   <app-file-explorer
-    *ngIf="fileExplorerOpen"
-    (closed)="closeFileExplorer()"
+    *ngIf="isAppOpen('explorer')"
+    (closed)="closeApp('explorer')"
     appDraggable
     appDraggableHandle=".explorer-header"
   />
   <app-text-editor
-    *ngIf="textEditorOpen"
-    (closed)="closeTextEditor()"
+    *ngIf="isAppOpen('text-editor')"
+    (closed)="closeApp('text-editor')"
     appDraggable
     appDraggableHandle=".editor-header"
   />
