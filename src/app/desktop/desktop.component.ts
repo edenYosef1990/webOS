@@ -15,6 +15,7 @@ export class DesktopComponent {
   terminalOpen = false;
   fileExplorerOpen = false;
   textEditorOpen = false;
+  
   selectedIcon: string | null = null;
 
   openTerminal() {
