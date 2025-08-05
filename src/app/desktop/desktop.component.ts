@@ -4,6 +4,7 @@ import { TerminalComponent } from '../apps/terminal/terminal.component';
 import { FileExplorerComponent } from '../apps/file-explorer/file-explorer.component';
 import { TextEditorComponent } from '../apps/text-editor/text-editor.component';
 import { DraggableDirective } from '../draggable.directive';
+import { DesktopService, DesktopApp } from '../desktop.service';
 
 @Component({
   selector: 'app-desktop',
@@ -13,34 +14,23 @@ import { DraggableDirective } from '../draggable.directive';
   styleUrl: './desktop.component.css'
 })
 export class DesktopComponent {
-  terminalOpen = false;
-  fileExplorerOpen = false;
-  textEditorOpen = false;
-  
+  apps: DesktopApp[] = [];
   selectedIcon: string | null = null;
 
-  openTerminal() {
-    this.terminalOpen = true;
+  constructor(private desktopService: DesktopService) {
+    this.apps = this.desktopService.getApps();
   }
 
-  closeTerminal() {
-    this.terminalOpen = false;
+  openApp(id: string) {
+    this.desktopService.openApp(id);
   }
 
-  openFileExplorer() {
-    this.fileExplorerOpen = true;
+  closeApp(id: string) {
+    this.desktopService.closeApp(id);
   }
 
-  closeFileExplorer() {
-    this.fileExplorerOpen = false;
-  }
-
-  openTextEditor() {
-    this.textEditorOpen = true;
-  }
-
-  closeTextEditor() {
-    this.textEditorOpen = false;
+  isAppOpen(id: string) {
+    return this.desktopService.isAppOpen(id);
   }
 
   selectIcon(icon: string) {
@@ -54,6 +44,6 @@ export class DesktopComponent {
   @HostListener('document:keydown.control.alt.t', ['$event'])
   handleShortcut(event: KeyboardEvent) {
     event.preventDefault();
-    this.openTerminal();
+    this.openApp('terminal');
   }
 }
