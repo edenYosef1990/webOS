@@ -1,7 +1,7 @@
-<div class="editor-window">
+  <div class="editor-window">
   <div class="editor-header">
-    <button class="close" (click)="closed.emit()">x</button>
     <span class="title">Text Editor</span>
+    <button class="close" (click)="closed.emit()">x</button>
   </div>
   <div class="editor-body">
     <textarea [(ngModel)]="text"></textarea>
