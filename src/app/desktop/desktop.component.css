@@ -60,3 +60,9 @@ app-file-explorer {
   top: 5rem;
   left: 15rem;
 }
+
+app-text-editor {
+  position: absolute;
+  top: 5rem;
+  left: 25rem;
+}
