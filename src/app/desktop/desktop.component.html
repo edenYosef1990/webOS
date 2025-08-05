@@ -11,22 +11,5 @@
       <div class="label">{{ app.label }}</div>
     </div>
   </div>
-  <app-terminal
-    *ngIf="isAppOpen('terminal')"
-    (closed)="closeApp('terminal')"
-    appDraggable
-    appDraggableHandle=".terminal-header"
-  />
-  <app-file-explorer
-    *ngIf="isAppOpen('explorer')"
-    (closed)="closeApp('explorer')"
-    appDraggable
-    appDraggableHandle=".explorer-header"
-  />
-  <app-text-editor
-    *ngIf="isAppOpen('text-editor')"
-    (closed)="closeApp('text-editor')"
-    appDraggable
-    appDraggableHandle=".editor-header"
-  />
+  <ng-container #appContainer></ng-container>
 </div>
