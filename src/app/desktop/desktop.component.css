@@ -36,6 +36,12 @@
   border-radius: 4px;
 }
 
+.icon.selected {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+}
+
 .icon img {
   width: 48px;
   height: 48px;
@@ -53,4 +59,10 @@ app-file-explorer {
   position: absolute;
   top: 5rem;
   left: 15rem;
+}
+
+app-text-editor {
+  position: absolute;
+  top: 5rem;
+  left: 25rem;
 }

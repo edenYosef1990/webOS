@@ -22,6 +22,8 @@ export class FileExplorerComponent {
     { name: 'Report.pdf', type: 'pdf' }
   ];
 
+  selectedFile: FileItem | null = null;
+
   getIcon(file: FileItem): string {
     switch (file.type) {
       case 'image':
@@ -31,5 +33,9 @@ export class FileExplorerComponent {
       default:
         return 'text-file-icon.svg';
     }
+  }
+
+  selectFile(file: FileItem | null) {
+    this.selectedFile = file;
   }
 }
